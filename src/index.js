@@ -41,16 +41,14 @@ function renderCountryList(countries) {
   if (countries.length > 10) {
     clearMarkup();
     Notify.info("Too many matches found. Please enter a more specific name");
-  };
-  
-  const listMurkup = countryListTpl(countries);
-  refs.countryList.innerHTML = listMurkup;
-  refs.countryInfo.innerHTML = "";
-  
-  if (countries.length === 1) {
+  } else if (countries.length === 1) {
     refs.countryList.innerHTML = "";
     renderCountryInformation(countries);
-  };
+  } else {
+    const listMurkup = countryListTpl(countries);
+    refs.countryList.innerHTML = listMurkup;
+    refs.countryInfo.innerHTML = "";
+  }
 };
 
 function renderCountryInformation(country) {
