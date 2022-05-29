@@ -1,9 +1,11 @@
+{{#each this}}
 <div class="country-info__main">
-  <img class="country-info__image" src="{{0.flags.png}}" alt="Flag of {{0.name.common}}">
-  <h2 class="country-info__name">{{0.name.official}}</h2>
+  <img class="country-info__image" src="{{this.flags.png}}" alt="Flag of {{this.name.common}}">
+  <h2 class="country-info__name">{{this.name.official}}</h2>
 </div>
 <ul class="country-info__detailed">
-  <li><p class="country-info__text"><b>Capital:</b> {{0.capital}}</p></li>
-  <li><p class="country-info__text"><b>Population:</b> {{0.population}}</p></li>
-  <li><p class="country-info__text"><b>Languages:</b> {{#each 0.languages}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p></li> 
+  <li><p class="country-info__text"><b>Capital:</b> {{this.capital}}</p></li>
+  <li><p class="country-info__text"><b>Population:</b> {{this.population}}</p></li>
+  <li><p class="country-info__text"><b>Languages:</b> {{#each this.languages}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p></li> 
 </ul>
+{{/each}}
