@@ -49,6 +49,7 @@ function renderCountryList(countries) {
     refs.countryList.innerHTML = listMurkup;
     refs.countryInfo.innerHTML = "";
   }
+  console.log(countries);
 };
 
 function renderCountryInformation(country) {
